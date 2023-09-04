@@ -7,7 +7,7 @@ const fail = edge.func({
   assemblyFile:
     __dirname + "/../squirrel/bin/Debug/net7.0/win-x64/publish/squirrel.dll", // Path to your compiled .NET assembly
   typeName: "squirrel.Operations", // Namespace and class name
-  methodName: "fail", // Method name
+  methodName: "CountAcorns", // Method name
 });
 
 fail("", function (error, result) {
