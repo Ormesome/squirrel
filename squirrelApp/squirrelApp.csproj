@@ -5,11 +5,12 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="squirrel">
-      <HintPath>..\squirrel\bin\Debug\net7.0\win-x64\publish\squirrel.dll</HintPath>
+    <Reference Include="squirrelLib">
+      <HintPath>..\squirrelLib\bin\Debug\net7.0\win-x64\publish\squirrelLib.dll</HintPath>
     </Reference>
   </ItemGroup>
 

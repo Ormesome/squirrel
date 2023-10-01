@@ -5,9 +5,9 @@ const edge = require("edge-js");
  */
 const fail = edge.func({
   assemblyFile:
-    __dirname + "/../squirrel/bin/Debug/net7.0/win-x64/publish/squirrel.dll", // Path to your compiled .NET assembly
-  typeName: "squirrel.Operations", // Namespace and class name
-  methodName: "CountAcorns", // Method name
+    __dirname + "..squirrelLib\binDebug\net7.0win-x64publishsquirrelLib.dll", // Path to the compiled .NET assembly
+  typeName: "squirrelLib.Operations", // Namespace and class name
+  methodName: "CountAcorns2", // Method name
 });
 
 fail("", function (error, result) {
