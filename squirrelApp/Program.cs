@@ -10,8 +10,7 @@ string result;
 // result = (string)oResult;
 // Console.WriteLine(result);
 
-// oResult = await op.CountAcorns(input);
-oResult = op.CountAcorns2();
+oResult = await op.CountAcorns(input);
 result = (string)oResult;
 Console.WriteLine(result);
 

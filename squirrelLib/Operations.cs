@@ -104,32 +104,22 @@ namespace squirrelLib
       return result;
     }
 
-    public async Task<object> CountAcorns(dynamic input)
-    {
-      string connectionString = "Data Source=127.0.0.1,1433;Initial Catalog=squirrelDb;User Id=sa;Password=<YourStrong!Passw0rd>;Encrypt=True;TrustServerCertificate=True;";
-      string storedProcedureName = "dbo.pCountAcorns";
-      object parameters = new { squirrelId = "430c8813-2ccd-4e89-997c-5fdeabc80efc"};
-      return await Task.Run(() => ExecuteStoredProcedureProcess(connectionString, storedProcedureName, parameters));
-    }
-
-    public string CountAcorns2()
+    public async Task<string> CountAcorns(dynamic input)
     {
       string connectionString = "Data Source=127.0.0.1,1433;Initial Catalog=squirrelDb;User Id=sa;Password=<YourStrong!Passw0rd>;Encrypt=True;TrustServerCertificate=True;";
       string storedProcedureName = "dbo.pCountAcorns";
       object parameters = new { squirrelId = "430c8813-2ccd-4e89-997c-5fdeabc80efc"};
       var response = ExecuteStoredProcedureProcess(connectionString, storedProcedureName, parameters);
-      var json = JsonSerializer.Serialize(response, new JsonSerializerOptions { WriteIndented = true });
+      var json = JsonSerializer.Serialize(response);
       return json;
     }
 
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
       var operations = new Operations();
-
       Console.WriteLine(operations.encryptProcess("Secret Squirel"));
-
-      var result = operations.CountAcorns2();
-      var data = JsonDocument.Parse(result)!;
+      var json = await operations.CountAcorns(new {});
+      using var data = JsonDocument.Parse(json);
       Console.WriteLine("Acorns collected = {0}",data.RootElement[0][0].GetProperty("acornCount"));
     }
   }

@@ -51,3 +51,14 @@ System.TypeInitializationException: The type initializer for 'Microsoft.Data.Sql
 Recommended Solution: Ensure "Execute" permissions are granted on the filesystem where native runtime libraries are loaded in the .NET Core process.
 
 https://learn.microsoft.com/en-us/sql/connect/ado-net/sqlclient-troubleshooting-guide?view=sql-server-ver16
+
+## Potential Improvements
+
+Suggestions for improvement, made by GitHub CoPilot:
+
+1. use a connection pool
+2. use a logger
+3. use a configuration file
+4. use a dependency injection framework
+5. use a unit testing framework
+6. use a mocking framework
